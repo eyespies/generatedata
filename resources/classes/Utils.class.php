@@ -23,21 +23,7 @@ class Utils {
 
 
 	public static function cleanHash($hash) {
-		$cleanHash = $hash;
-		if (get_magic_quotes_gpc()) {
-			while (list($key, $value) = each($hash)) {
-				if (!is_array($value)) {
-					$cleanHash[$key] = stripslashes($value);
-				} else {
-					$cleanArray = array();
-					foreach ($value as $val) {
-						$cleanArray[] = stripslashes($val);
-					}
-					$cleanHash[$key] = $cleanArray;
-				}
-			}
-		}
-		return $cleanHash;
+		return $hash;
 	}
 
 
