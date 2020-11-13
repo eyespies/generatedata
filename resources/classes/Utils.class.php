@@ -71,11 +71,7 @@ class Utils {
 				$output[$k] = Utils::sanitize($i);
 			}
 		} else {
-			if (get_magic_quotes_gpc()) {
-				$output = stripslashes($input);
-			} else {
-				$output = $input;
-			}
+			$output = $input;
 		}
 
 		return $output;
